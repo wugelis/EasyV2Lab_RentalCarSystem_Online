@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AOP.ApiControllerBase.ApiLog10" Version="8.0.0" />
+    <PackageReference Include="EasyArchitectV2Lab10.AuthExtensions10.Extensions" Version="8.0.0" />
+    <PackageReference Include="EasyArchitectV2Lab10.AuthExtensions10.Filters" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+      <PackageReference Include="NLog" Version="4.7.13" />
+    <PackageReference Include="NLog.Config" Version="4.7.13" />
+    <PackageReference Include="NLog.Schema" Version="4.7.13" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application10.RentalCar10\Application10.RentalCar10.csproj" />
+    <ProjectReference Include="..\EasyArchitectV2Lab10.ApiControllerBase10\EasyArchitectV2Lab10.ApiControllerBase10.csproj" />
+    <ProjectReference Include="..\EasyArchitectV2Lab10.AuthExtensions10\EasyArchitectV2Lab10.AuthExtensions10.csproj" />
+    <ProjectReference Include="..\EasyArchitectV2Lab10.Configuration10\EasyArchitectV2Lab10.Configuration10.csproj" />
+    <ProjectReference Include="..\EasyArchitectV2Lab10.JWTMiddleware10\EasyArchitectV2Lab10.JWTMiddleware10.csproj" />
+    <ProjectReference Include="..\Infrastructure10.RentalCar10\Infrastructure10.RentalCar10.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="NLogOutSide.Config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
