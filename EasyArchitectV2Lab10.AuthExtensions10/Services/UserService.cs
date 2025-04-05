@@ -17,13 +17,13 @@ namespace EasyArchitectV2Lab10.AuthExtensions10.Services
         public static IEnumerable<IAccountEnt>? _accountEnts;
 
         private readonly IOptions<AppSettings> _appSettings;
-        private string _identityUser;
+        private string? _identityUser;
         private decimal? _identityId;
 
         /// <summary>
         /// 取得目前 Scoped 下的使用者
         /// </summary>
-        public string IdentityUser { get => _identityUser; set => _identityUser = value; }
+        public string? IdentityUser { get => _identityUser; set => _identityUser = value; }
         /// <summary>
         /// 取得目前 Scoped 下的使用者的 Id (流水號)
         /// </summary>
@@ -85,6 +85,11 @@ namespace EasyArchitectV2Lab10.AuthExtensions10.Services
 
         public User? GetByUsername(string username)
         {
+            User? user = string.IsNullOrEmpty(_identityUser) ? new User() { Id = _identityId.HasValue?_identityId.Value:0, Username = username} : null;
+
+            return user;
+
+            /*
             return _accountEnts
                 .Where(x => x.UserID == username)
                 .Select(c => new User()
@@ -93,6 +98,7 @@ namespace EasyArchitectV2Lab10.AuthExtensions10.Services
                     Username = c.UserID
                 })
                 .FirstOrDefault();
+            */
         }
 
         /// <summary>

@@ -1,1 +1,22 @@
 # For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+@rentalCarHost = https://localhost:7116/
+@tokenKeyValue = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6ImdlbGlzIiwiSWQiOiIxIiwibmJmIjoxNzQzNTg1MTcwLCJleHAiOjE3NDM1ODU0NzAsImlhdCI6MTc0MzU4NTE3MH0.z3LnkHs2FQPitTz0T4RF1_u3MNsbt11eu7EyKoVr4O0
+
+GET {{rentalCarHost}}api/RentalCarApi/GetAllCars
+Accept: application/json
+
+###
+POST {{rentalCarHost}}api/RentalCarApi/Login
+Content-Type: application/json
+
+{
+  "Username": "gelis",
+  "Password": "abcdefgHIJKLMN..."
+}
+
+###
+
+GET {{rentalCarHost}}api/RentalCarApi/GetPersons
+Content-Type: application/json
+Authorization: bearer {{tokenKeyValue}}
